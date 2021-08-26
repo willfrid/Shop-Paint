@@ -18,3 +18,5 @@ symfony serve -d
 ``bash
 php bin/phpunit --testdox
 ``
+
+##  npm install sass-loader@^12.0.0 sass --save-dev
