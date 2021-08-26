@@ -12,7 +12,7 @@ import './bigpicture';
 import './bootstrap';
 import './choices';
 import './countup';
-import './dropzone';
+//import './dropzone';
 import './flickity';
 import './highlight';
 import './isotope';
