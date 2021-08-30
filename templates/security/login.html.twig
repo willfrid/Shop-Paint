@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Welcome!
+        {% endblock %}
+    </title>
+    {% block stylesheets %}
+          {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <section>
+        <div class="container d-flex flex-column">
+          <div class="row align-items-center justify-content-center gx-0 min-vh-100">
+            <div class="py-8 col-12 col-md-6 col-lg-4 py-md-11">
+  
+              <!-- Heading -->
+              <h1 class="mb-0 fw-bold">
+                Ouvrir une session
+              </h1>
+  
+              <!-- Text -->
+              <p class="mb-6 text-muted">
+                Administrateur du site internet
+              </p>
+  
+              <!-- Form -->
+              <form method="POST" class="mb-6">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                    
+                    <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
+                    <!-- Email -->                
+                    <button class="btn w-100 btn-primary" type="submit">
+                        Ouvrir une session
+                    </button>
+              </form>
+  
+              <!-- Text -->
+              <p class="mb-0 fs-sm text-muted">
+                Pas encore de compte? <a href="#">Inscrivez vous</a>.
+              </p>
+  
+            </div>
+            <div class="col-lg-7 offset-lg-1 align-self-stretch d-none d-lg-block" data-aos="fade-left">
+  
+              <!-- Image -->
+              <div class="bg-cover h-100 w-cover "  style="background-image: url(https://www.cdiscount.com/pdt2/2/8/5/1/700x700/auc0738583128285/rw/bureau-d-ordinateur-avec-etagere-armoire-tiroir-ta.jpg);"></div>
+  
+              <!-- Shape -->
+              <div class="text-white shape shape-start shape-fluid-y">
+                <svg viewBox="0 0 100 1544" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v386l-50 772v386H0V0z" fill="currentColor"/></svg>            </div>
+  
+            </div>
+          </div> <!-- / .row -->
+        </div> <!-- / .container -->
+      </section>
+
+    {{ encore_entry_script_tags('app') }}
+</body>
+</html>
