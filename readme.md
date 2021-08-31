@@ -7,7 +7,7 @@ shopPeinture est un site de presentaion de peinture
 * Composer
 * Symfony CLI
 * Docker
-* Docker-compose
+* Docker-composesy
 * node js et npm 
 vous pouvez verifier les prés-requis (sauf Docker et Docker-compose) avec la commande suivantes (de la CLI Symfony):
 
@@ -21,5 +21,6 @@ symfony serve -d
 ``bash
 php bin/phpunit --testdox
 ``
-
-##  npm install sass-loader@^12.0.0 sass --save-dev
+``
+npm install sass-loader@^12.0.0 sass --save-dev
+``
