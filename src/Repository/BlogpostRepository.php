@@ -19,6 +19,19 @@ class BlogpostRepository extends ServiceEntityRepository
         parent::__construct($registry, Blogpost::class);
     }
 
+    /**
+     * @return Blogpost[] Returns an array of Blogpost objects
+     */
+    // requetes pour nous retourner les 03 denieres peintures
+    public function lassTree(){
+        return $this->createQueryBuilder('bp')
+            ->orderBy('bp.id','DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+
+            ;
+    }
     // /**
     //  * @return Blogpost[] Returns an array of Blogpost objects
     //  */

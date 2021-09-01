@@ -17,6 +17,10 @@ npm rund build
 docker-compose up -d
 symfony serve -d
 ```
+###ajout des données de test
+```bash
+symfony console doctrine:fixtures:load
+```
 ## Lancer des tests
 ``bash
 php bin/phpunit --testdox

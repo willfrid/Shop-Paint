@@ -49,10 +49,6 @@ class Peinture
      */
     private $dateRealisation;
 
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $createdAt;
 
     /**
      * @ORM\Column(type="text")
@@ -90,6 +86,11 @@ class Peinture
      * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="peinture", orphanRemoval=true)
      */
     private $commentaires;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
 
     public function __construct()
     {
@@ -174,17 +175,6 @@ class Peinture
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
 
     public function getDescription(): ?string
     {
@@ -296,6 +286,18 @@ class Peinture
                 $commentaire->setPeinture(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
