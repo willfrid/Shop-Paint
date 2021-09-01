@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Blogpost;
+use App\Entity\Categorie;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -51,6 +52,14 @@ class AppFixtures extends Fixture
             }
 
         // on va d'abord creer des ficture pour les categories car les filtres sont classé par categorie
+
+        for ($i=0; $i<5; $i++ ){
+            $categorie = new Categorie();
+            $categorie->setNom($faker->words(3,true))
+                        ->setDescription($faker->text(350))
+                        ->setSlug($faker->slug(3));
+            $manager->persist($categorie);
+        }
         $manager->flush();
 
 
