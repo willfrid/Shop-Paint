@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PeintureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,12 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class PeinturesController extends AbstractController
 {
     /**
-     * @Route("/peintures", name="peintures")
+     * @Route("/peinture", name="app_peinture")
      */
-    public function index(): Response
+    public function index(PeintureRepository $peintureRepository): Response
     {
         return $this->render('peintures/index.html.twig', [
-            'controller_name' => 'PeinturesController',
+            'peintures' => $peintureRepository->findAll()
         ]);
     }
 }

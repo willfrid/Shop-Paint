@@ -83,7 +83,7 @@ class Peinture
     private $categorie;
 
     /**
-     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="peinture", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="realisation", orphanRemoval=true)
      */
     private $commentaires;
 
