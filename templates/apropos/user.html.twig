@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AproposController!{% endblock %}
+{% block title %}Willfrid Dongmo{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+   <section data-jarallax data-speed=".8" class="py-15 overlay overlay-black overlay-60 jarallax" style="background-image: url(https://landkit.goodthemes.co/assets/img/photos/photo-21.jpg);">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-12 col-md-7">
+                   <blockquote class="blockquote mb-0">
+                       <p class="h2 text-white">
+                           {{ peintre.prenom }} {{ peintre.nom }}
+                       </p>
+                       <footer class="blockquote-footer text-white-50 mb-0 justify">
+                           <p class="h3">
+                               {{ peintre.APropos | u.truncate(150,'...',false)}}
+                           </p>
+                       </footer>
+                   </blockquote>
+               </div>
+           </div>
+       </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/ShopPeinture/src/Controller/AproposController.php'|file_link(0) }}">src/Controller/AproposController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/ShopPeinture/templates/apropos/index.html.twig'|file_link(0) }}">templates/apropos/index.html.twig</a></code></li>
-    </ul>
-</div>
+   </section>
 {% endblock %}

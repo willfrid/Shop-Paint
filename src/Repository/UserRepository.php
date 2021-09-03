@@ -35,6 +35,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->persist($user);
         $this->_em->flush();
     }
+    //fonction qui permet de recuperer le user qui est la le role peintre
+
+    public  function getPeintre(){
+        return $this->createQueryBuilder('u')
+                    ->where('u.roles LIKE :roles')
+                    ->setParameter('roles','%"ROLE_PEINTRE"%')
+                    ->getQuery()
+                    ->getOneOrNullResult();
+
+        }
 
     // /**
     //  * @return User[] Returns an array of User objects
