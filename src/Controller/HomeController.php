@@ -15,7 +15,7 @@ class HomeController extends AbstractController
      */
     public function index(PeintureRepository $peintureRepository,BlogpostRepository $blogpostRepository): Response
     {
-        return $this->render('home/index.html.twig',[
+        return $this->render('home/actualite.html.twig',[
             'peintures'=>$peintureRepository->lassTree(),
             'blogposts'=>$blogpostRepository->lassTree()
         ]);

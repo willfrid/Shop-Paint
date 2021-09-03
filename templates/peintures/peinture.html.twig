@@ -60,6 +60,10 @@
 
             </div> <!-- / .row -->
         </div> <!-- / .container -->
+        <div class="d-flex justify-content-center">
+            {% do peintures.setPageRange(2) %}
+            {{ knp_pagination_render(peintures,'base/pagination.html.twig') }}
+        </div>
     </section>
     <div class="position-relative">
         <div class="shape shape-bottom shape-fluid-x text-gray-200">
