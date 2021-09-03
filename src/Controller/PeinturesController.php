@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PeinturesController extends AbstractController
 {
     /**
-     * @Route("/peinture", name="app_peinture")
+     * @Route("/peinture", name="realisation")
      */
     public function index(PeintureRepository $peintureRepository,PaginatorInterface $paginator,Request $request): Response
     {

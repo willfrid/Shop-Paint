@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             {% for blogpost in blogposts %}
-                <div class="col-12 col-md-6 col-lg-4 d-flex mb-3">
+                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
                     <!-- Card -->
                     <div class="mb-6 card mb-lg-0 shadow-light-lg lift lift-lg" data-aos="fade-up">
                         <!-- Body -->
@@ -30,9 +30,7 @@
                         </a>
                         <!-- Meta -->
                         <a class="mt-auto card-meta" href="#!">
-                            <!-- Divider -->
                             <hr class="card-meta-divider">
-                            <!-- Author -->
                             <h6 class="mb-0 text-uppercase text-muted">
                                 Publier le :   {{ blogpost.CreatedAt | date("d/m/Y") }}
                             </h6>
@@ -40,7 +38,6 @@
                     </div>
                 </div>
             {% endfor %}
-
         </div>
     </div>
 </section>

@@ -1,8 +1,8 @@
 <!-- NAVBAR -->
-<nav class="bg-white navbar navbar-expand-lg navbar-light">
+<nav class="bg-dark navbar navbar-expand-lg navbar-light text-white">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand" href="./index.html">
+        <a class="navbar-brand" href="{{ path('home') }}">
             <img src="https://www.horizonprevention.fr/wp-content/uploads/2019/06/Logo-transparent.png"  class="navbar-brand-img" alt="..." >
         </a>
         <!-- Toggler -->
@@ -18,12 +18,12 @@
             <!-- Navigation -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="{{ path('app_peinture') }}" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle " id="navbarLandings" data-bs-toggle="dropdown" href="{{ path('realisation') }}">
                         Réalisations
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="{{ path('actualite') }}">
                         Actualités
                     </a>
                 </li>
