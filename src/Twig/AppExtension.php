@@ -19,7 +19,7 @@ class AppExtension extends  AbstractExtension
         ];
     }
 
-    public function categorie():array
+    public function categorie(): array
     {
         return $this->categorieRepository->findAll();
     }
