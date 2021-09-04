@@ -28,31 +28,16 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"   data-bs-toggle="dropdown" href="#" aria-haspopup="true">
+                    <a class="nav-link" href="{{ path('portfolio') }}">
                         Portfolio
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarAccount">
-                        <li class="dropdown-item dropend">
-                            <a class="dropdown-link" data-bs-toggle="dropdown" href="#">
-                                Settings
-                            </a>
-                        </li>
-                        <li class="dropdown-item dropend">
-                            <a class="dropdown-link" data-bs-toggle="dropdown" href="#">
-                                Sign In
-                            </a>
-                        </li>
-                        <li class="dropdown-item dropend">
-                            <a class="dropdown-link" data-bs-toggle="dropdown" href="#">
-                                Sign Up
-                            </a>
-                        </li>
-                        <li class="dropdown-item dropend">
-                            <a class="dropdown-link" data-bs-toggle="dropdown" href="#">
-                                Error
-                            </a>
-                        </li>
-                  </ul>  
+                        {% for categorie in categorieNavbar() %}
+                            <li class="dropdown-item dropend">
+                                <a href="{{ path('portfolio_categorie',{'slug':categorie.slug}) }}"></a>
+                            </li>
+                        {% endfor %}
+                  </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="{{ path('apropos') }}" class="nav-link">

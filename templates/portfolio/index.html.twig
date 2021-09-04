@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}portflio{% endblock %}
+
+{% block body %}
+    <!-- WELCOME -->
+    <section class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-gray-900" style="margin-top: -87px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7 text-center">
+                    <!-- Headin -->
+                    <h2 class="display-2 fw-bold text-white">
+                       PORTFOLIO
+                    </h2>
+
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+    <!-- SHAPE -->
+    <div class="position-relative">
+        <div class="shape shape-bottom shape-fluid-x text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
+        <div class="container">
+            <div class="row" id="portfolio" data-isotope='{"layoutMode": "masonry"}'>
+                {% for categorie in categories %}
+                    {% set img= categorie.peintures | last %}
+                    <div class="col-12 col-md-4 ux">
+                        <a href="{{ path('portfolio_categorie',{'slug': categorie.slug}) }}" class="card lift lift-lg shadow-light-lg mb-7">
+                            <img src="{{ img.file }}" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <div class="shape shape-bottom-100 shape-fluid-x svg-shim text-white">
+                                    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>
+                                </div>
+                                <h4 class="mb-0">{{ categorie.nom }}</h4>
+                                <small>{{ categorie.description }}</small>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

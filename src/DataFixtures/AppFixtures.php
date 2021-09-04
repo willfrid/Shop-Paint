@@ -55,7 +55,7 @@ class AppFixtures extends Fixture
 
         // on va d'abord creer des ficture pour les categories car les filtres sont classé par categorie
 
-        for ($i=0; $i<5; $i++ ){
+        for ($i=0; $i<6; $i++ ){
             $categorie = new Categorie();
             $categorie->setNom($faker->word())
                         ->setDescription($faker->text(350))
