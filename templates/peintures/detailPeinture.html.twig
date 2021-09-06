@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ peinture.nom}}{% endblock %}
+{% block body %}
+    <!-- CONTENT -->
+    <div class="container-fluid px-md-0">
+        <div class="row justify-content-between gx-0 mx-md-0">
+            <div class="col-12 col-md-4 position-md-sticky d-flex align-items-center vh-md-100 mx-auto" style="top: 0;">
+                <!-- Sidebar -->
+                <aside class="flex-grow-1 py-8 py-md-10">
+                    <!-- Brand -->
+                    <div>
+                        <h2>{{ peinture.nom }}</h2>
+                        {% for categorie in peinture.categorie %}
+                            <span class="badge bg-secondary">{{ categorie.nom }}</span>
+                        {% endfor %}
+                    </div>
+                    <p class="fs-ls mb-7 text-muted">
+                        {{ peinture.description }}
+                    </p>
+                    <!-- List group -->
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                Date de realisation
+                                <span class="ms-auto">{{ peinture.dateRealisation | date("d/m/Y") }}</span>
+                            </h6>
+                        </li>
+                        <li class="list-group-item">
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                largeur
+                                <span class="ms-auto">{{ peinture.largeur }}</span>
+                            </h6>
+                        </li>
+                        <li class="list-group-item">
+                            <!-- Heading -->
+                            <h6 class="d-flex mb-0 text-uppercase">
+                                hauteur
+                                <span class="ms-auto">{{ peinture.hauteur }}</span>
+                            </h6>
+                        </li>
+                        {% if peinture.enVente %}
+                            <li class="list-group-item">
+                                <!-- Heading -->
+                                <h6 class="d-flex mb-0 text-uppercase">
+                                   <strong> Disponible à la vente</strong>
+                                    <span class="ms-auto"><strong>{{ peinture.prix }}</strong></span>
+                                </h6>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </aside>
+            </div>
+            <div class="col-12 col-md-7">
+                <!-- Images -->
+                <section class="pt-md-10">
+                    <img class="w-100 h-auto" src="http://4.bp.blogspot.com/-dzW51iJUabM/UF3wd_T2NrI/AAAAAAAAA-g/6SXdi9GLi1E/s1600/-robert-paysage-de-garrigue.jpg" alt="...">
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- SHAPE -->
+    <div class="position-relative" style="z-index: 1;">
+        <div class="shape shape-bottom shape-fluid-x text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+{% endblock %}
