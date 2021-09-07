@@ -18,7 +18,7 @@
                     <!-- Card -->
                     <div class="mb-6 card mb-lg-0 shadow-light-lg lift lift-lg" data-aos="fade-up">
                         <!-- Body -->
-                        <a class="card-body" href="#!">
+                        <a class="card-body" href="{{ path('actualité_detail',{'slug':blogpost.slug}) }}">
                             <!-- Heading -->
                             <h3>
                                 {{ blogpost.titre }}
@@ -29,7 +29,7 @@
                             </p>
                         </a>
                         <!-- Meta -->
-                        <a class="mt-auto card-meta" href="#!">
+                        <a class="mt-auto card-meta" href="{{ path('actualité_detail',{'slug':blogpost.slug}) }}">
                             <hr class="card-meta-divider">
                             <h6 class="mb-0 text-uppercase text-muted">
                                 Publier le :   {{ blogpost.CreatedAt | date("d/m/Y") }}
