@@ -13,8 +13,8 @@
       <STRICTNESS_CATEGORY_PHPUNIT enabled="yes" />
     </categories>
     <settings>
-      <ANALYZE_ONLY_MODIFIED_FILES value="no" />
-      <PREFER_YODA_COMPARISON_STYLE value="no" />
+      <ANALYZE_ONLY_MODIFIED_FILES value="yes" />
+      <PREFER_YODA_COMPARISON_STYLE value="yes" />
     </settings>
   </component>
 </project>
