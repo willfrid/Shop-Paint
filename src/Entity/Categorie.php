@@ -111,4 +111,8 @@ class Categorie
 
         return $this;
     }
+    //fonction qui permet de recuperer le nom des categories
+    public function __toString(){
+        return $this->nom;
+    }
 }

@@ -27,7 +27,7 @@ class PeintureRepository extends ServiceEntityRepository
     // requetes pour nous retourner les 03 denieres peintures
     public function lassTree(){
         return $this->createQueryBuilder('p')
-            ->orderBy('p.id','ASC')
+            ->orderBy('p.id','DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult()
