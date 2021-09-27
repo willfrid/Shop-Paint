@@ -20,9 +20,9 @@
                     <!-- Card -->
                      <div class="card card-row shadow-light-lg mb-6" data-aos="fade-right">
                         <div class="row gx-0">
-                            <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ vich_uploader_asset(peinture,'imageFile') }});" href="{{ path('realisation_details',{'slug':peinture.slug}) }}">
+                            <a class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ vich_uploader_asset(peinture,'imageFile') | imagine_filter('miniature')}});" href="{{ path('realisation_details',{'slug':peinture.slug}) }}">
                                 <!-- Image (placeholder) -->
-                                <img src="{{ vich_uploader_asset(peinture,'imageFile') }}" alt="..." class="img-fluid d-md-none invisible">
+                                <img src="{{ vich_uploader_asset(peinture,'imageFile') | imagine_filter('miniature')}}" alt="..." class="img-fluid d-md-none invisible">
 
                                 <!-- Shape -->
                                 <div class="shape shape-end shape-fluid-y text-white d-none d-md-block">

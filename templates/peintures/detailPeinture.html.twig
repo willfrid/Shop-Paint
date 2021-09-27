@@ -55,7 +55,7 @@
             <div class="col-12 col-md-7">
                 <!-- Images -->
                 <section class="pt-md-10">
-                    <img class="{{ vich_uploader_asset(peinture,'imageFile') }}" alt="...">
+                    <img class="" alt="..." src="{{ vich_uploader_asset(peinture,'imageFile') | imagine_filter('full')}}">
                 </section>
             </div>
         </div>

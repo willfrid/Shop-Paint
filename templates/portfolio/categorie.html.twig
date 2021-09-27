@@ -3,7 +3,7 @@
 {% block body %}
     <!-- WELCOME -->
     {% set img= categorie.peintures | last %}
-    <section  data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-gray-900" style="margin-top: -87px;background-image: url(https://storage.gra.cloud.ovh.net/v1/AUTH_ca60d77ddd5e42749d7c4c17f753540d/ugm-data/pictures/cbtableaux/2143036-tableau-peinture-sur-toile-a-l-huile-peinture-couteau-tab-1.jpeg);">
+    <section  data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-gray-900" style="margin-top: -87px;background-image: url({{ vich_uploader_asset(img,'imageFile') | imagine_filter('welcome') }});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -30,9 +30,9 @@
             <div class="row" id="portfolio" data-isotope='{"layoutMode": "masonry"}'>
                 {% for peinture in peintures %}
                     <div class="col-12 col-md-4 ux">
-                        <a href="#!" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture = {"imgSrc":"{{ peinture.file}}"}>
+                        <a href="#!" class="card lift lift-lg shadow-light-lg mb-7" data-bigpicture = {"imgSrc":"{{ vich_uploader_asset(img,'imageFile') | imagine_filter('full') }}"}>
                             <div class="card-zoom">
-                                <img src="{{ peinture.file }}" alt="" class="card-img">
+                                <img src="{{ vich_uploader_asset(img,'imageFile') | imagine_filter('portfolio') }}" alt="" class="card-img">
                             </div>
                         </a>
                     </div>
