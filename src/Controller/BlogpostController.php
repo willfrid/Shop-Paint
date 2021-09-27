@@ -17,7 +17,7 @@ class BlogpostController extends AbstractController
      */
     public function actualite(BlogpostRepository $blogpostRepository,PaginatorInterface $paginator,Request $request): Response
     {
-        $data = $blogpostRepository->findAll();
+        $data = $blogpostRepository->findBy([],['id'=>'DESC']);
         $blogposts= $paginator->paginate(
             $data,$request->query->getInt('page',1),6
         );
