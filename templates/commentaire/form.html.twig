@@ -1,0 +1,40 @@
+<section class="pt-6 pt-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-6 pt-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <button class="btn btn-secondary mb-5" data-bs-toggle="modal">
+                    laisser un commentaire
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="commentaire" tabindex="-1" aria-labelledby="commentaire" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">laisser un commentaire</h5>
+                <button class="btn-close" type="button" data-bs-dismis="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+

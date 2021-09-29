@@ -19,6 +19,7 @@ class SendContactCommand extends Command
     private $contactService;
     private $userRepository;
     protected static $defaultName = 'app:send-contact';
+    
 
     public function __construct(
         ContactRepository $contactRepository,

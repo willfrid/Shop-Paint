@@ -47,6 +47,11 @@ class Commentaire
      */
     private $blogpost;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublish;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Commentaire
     public function setBlogpost(?Blogpost $blogpost): self
     {
         $this->blogpost = $blogpost;
+
+        return $this;
+    }
+
+    public function getIsPublish(): ?bool
+    {
+        return $this->isPublish;
+    }
+
+    public function setIsPublish(bool $isPublish): self
+    {
+        $this->isPublish = $isPublish;
 
         return $this;
     }
